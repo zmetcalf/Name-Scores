@@ -4,3 +4,6 @@
 *.jar
 *.war
 *.ear
+
+/.c9revisions
+*.c9save
