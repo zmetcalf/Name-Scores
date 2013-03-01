@@ -1,8 +1,9 @@
 public class NameScoresTest {
     
     public static void main(String [] args) {
-    
-        NameScores score = new NameScores();
+        String fileName = "names.txt";
+        NameScores score = new NameScores(fileName);        
+        System.out.println(score.getNameList());
     
     }
 }
