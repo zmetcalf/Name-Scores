@@ -23,7 +23,8 @@ public class NameScores {
             System.err.format("IOException: %s%n", x);
         }
         setNameList();
-        alphabitizeList();
+        System.out.println(getNameScore("\"COLIN\""));
+        //alphabitizeList();
     }   
     
     private void setNameList() {
@@ -36,10 +37,22 @@ public class NameScores {
     
     private void alphabitizeList() {
         //toCharArray will be helpful for alphabitization
-        for(int x: testArray) {    
-            for(int i : testArray) {
+        //for(int x: testArray) {    
+        //    for(int i : testArray) {
             
-            }
+        //    }
+        //}
+    }
+    
+    private int getNameScore(String name) {
+        char[] charNameArray = new char[name.length() - 2];
+        int nameTotal = 0;
+        
+        name.getChars(1, (name.length() - 1),charNameArray, 0);
+        System.out.println(charNameArray);
+        for(int i : charNameArray) {
+            nameTotal += (i - 64);
         }
+        return nameTotal;
     }
 }
