@@ -2,6 +2,7 @@ import java.nio.charset.Charset;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.file.*;
+import java.util.Arrays; //required for sort - http://leepoint.net/notes-java/data/arrays/70sorting.html
 
 public class NameScores {
     
@@ -23,8 +24,7 @@ public class NameScores {
             System.err.format("IOException: %s%n", x);
         }
         setNameList();
-        System.out.println(getNameScore("\"COLIN\""));
-        //alphabitizeList();
+        alphabitizeList();
     }   
     
     private void setNameList() {
@@ -36,12 +36,7 @@ public class NameScores {
     }
     
     private void alphabitizeList() {
-        //toCharArray will be helpful for alphabitization
-        //for(int x: testArray) {    
-        //    for(int i : testArray) {
-            
-        //    }
-        //}
+        Arrays.sort(testArray);
     }
     
     private int getNameScore(String name) {
