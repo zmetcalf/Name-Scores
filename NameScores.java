@@ -25,14 +25,15 @@ public class NameScores {
         }
         setNameList();
         alphabitizeList();
+        calculateScore();
     }   
     
     private void setNameList() {
         testArray = testListOfNames.split(",");
     }
     
-    public String getNameList() {
-        return testArray[0] + " " + testArray[1];
+    public long getNameScoreTotal() {
+        return nameScoreTotal;
     }
     
     private void alphabitizeList() {
@@ -44,10 +45,19 @@ public class NameScores {
         int nameTotal = 0;
         
         name.getChars(1, (name.length() - 1),charNameArray, 0);
-        System.out.println(charNameArray);
+        
         for(int i : charNameArray) {
             nameTotal += (i - 64);
         }
         return nameTotal;
+    }
+    
+    private void calculateScore() {
+        int counter = 1;
+        
+        for(String i : testArray) {
+            nameScoreTotal += (getNameScore(i) * counter);
+            counter++;
+        }
     }
 }
